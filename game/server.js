@@ -6,6 +6,7 @@ let express = require('express');
 let http = require('http');
 let path = require('path');
 let socketIO = require('socket.io');
+let port = 3333;
 
 let app = express();
 let server = http.Server(app);
@@ -47,10 +48,10 @@ app.post('/goGame', function(req, res) {
   playersInQueue.push(req.body.nick);
 });
 
-server.listen(54070, "0.0.0.0");
+server.listen(port, "0.0.0.0");
 
 require('dns').lookup(require('os').hostname(), function (err, add, fam) {
-  console.log('addr: '+add);
+  console.log('listening on: ' + add + ':' + port);
 })
 
 
