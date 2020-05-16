@@ -1,4 +1,5 @@
 let SemiAutomaticWeapon = require('./SemiAutomaticWeapon');
+let Bullet = require('../Bullet');
 
 class DoublePistol extends SemiAutomaticWeapon {
     constructor() {
